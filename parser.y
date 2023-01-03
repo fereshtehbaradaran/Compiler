@@ -66,8 +66,8 @@ factor  : '(' expr ')'              { strcpy($$, $2); }
 %%
 
 void yyerror(char *msg) {
-    // fprintf(stderr,"%s\n",msg);
-    // exit(1);
+    fprintf(stderr,"%s\n",msg);
+    exit(1);
 }
 
 
