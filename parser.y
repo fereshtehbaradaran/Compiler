@@ -43,10 +43,10 @@ term    : factor MUL term           { sprintf($$, "t%d", create_Var++); printf("
         | factor                    { strcpy($$, $1); }
         ;
 
-factor  : '(' expr ')'             { strcpy($$, $2); }
-        | '-' factor               { strcpy(sign,"-"); strcat(sign,$2); strcpy($$, sign); }
-        | NUM                      { strcpy($$, $1); }
-        | ID                       { strcpy($$, $1); }
+factor  : '(' expr ')'              { strcpy($$, $2); }
+        | '-' factor                { strcpy(sign,"-"); strcat(sign,$2); strcpy($$, sign); }
+        | NUM                       { strcpy($$, $1); }
+        | ID                        { strcpy($$, $1); }
         ;
 
 %%
