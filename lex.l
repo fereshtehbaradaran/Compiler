@@ -24,7 +24,7 @@ number      {digit}+(\.{digit}+)?([eE][+\-]?{digit}+)?
 ":M:"       {return MUL;}
 ":D:"       {return DIV;}
 
-[=()]       {return yytext[0];}
+[-=()]       {return yytext[0];}
 
 .           printf("Unexpected Character!\n");
 
