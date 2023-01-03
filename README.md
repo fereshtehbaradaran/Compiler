@@ -1,7 +1,8 @@
 # Compiler
 A compiler which converts an special form of mathematical expressions to three-address-code.
 
-Each expression contains Integers, variables, parentheses, white spaces and operations which are defined as follow: </br>
+Each expression contains Integers, variables, parentheses, white spaces and operations which are defined as follow:
+
 + **:A:** (Addition)  
 + **:S:** (Subtraction)  
 + **:M:** (Multiplication)  
