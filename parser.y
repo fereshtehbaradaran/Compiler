@@ -16,7 +16,7 @@
 
 %}
 
-%start Program
+%start expr
 
 %union{
     char id[500];
@@ -36,10 +36,10 @@
 
 %right '='
 %right ADD
-%rigth SUB
+%right SUB
 %right MUL
 %right DIV
-%left  UMINUS 
+%right UMINUS 
 
 %%
 
@@ -66,8 +66,8 @@ factor  : '(' expr ')'              { strcpy($$, $2); }
 %%
 
 void yyerror(char *msg) {
-    fprintf(stderr,"%s\n",msg);
-    exit(1);
+    // fprintf(stderr,"%s\n",msg);
+    // exit(1);
 }
 
 
