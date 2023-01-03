@@ -1,4 +1,18 @@
 %{
+    #include <stdio.h>
+    #include <string.h>
+
+	int tempCounter = 1;
+
+    char Buffer[16];
+    char sign[50];
+
+
+    extern int yylex();
+    extern FILE *yyin;
+    extern FILE *yyout;
+
+    void yyerror(char *msg);
 
 %}
 
@@ -18,7 +32,7 @@
 %token MUL
 %token DIV
 
-%type <nonTerminal>  block stmts stmt  optexpr IDs expr rel add term power factor 
+%type <nonTerminal>  expr add term factor 
 
 %right '='
 %right ADD
@@ -33,13 +47,13 @@ expr    : ID '=' expr               { strcpy($$, $3); printf("%s = %s;\n", $1, $
         | add                       { strcpy($$, $1); }
         ;
 
-add     : term ADD add              { sprintf($$, "t%d", create_Var++); printf("%s = %s + %s;\n", $$, $3, $1); }
-        | term SUB add              { sprintf($$, "t%d", create_Var++); printf("%s = %s - %s;\n", $$, $3, $1); }
+add     : term ADD add              { sprintf($$, "t%d", tempCounter++); printf("%s = %s + %s;\n", $$, $3, $1); }
+        | term SUB add              { sprintf($$, "t%d", tempCounter++); printf("%s = %s - %s;\n", $$, $3, $1); }
         | term                      { strcpy($$, $1);}
         ;
 
-term    : factor MUL term           { sprintf($$, "t%d", create_Var++); printf("%s = %s * %s;\n", $$, $3, $1); }
-        | factor DIV term           { sprintf($$, "t%d", create_Var++); printf("%s = %s / %s;\n", $$, $3, $1); }
+term    : factor MUL term           { sprintf($$, "t%d", tempCounter++); printf("%s = %s * %s;\n", $$, $3, $1); }
+        | factor DIV term           { sprintf($$, "t%d", tempCounter++); printf("%s = %s / %s;\n", $$, $3, $1); }
         | factor                    { strcpy($$, $1); }
         ;
 
