@@ -1,13 +1,13 @@
 # Compiler
 A compiler which converts an special form of mathematical expressions to three-address-code.
 
-Each expression contains Integers, variables, parentheses, white spaces and operations which are defined as follow:
+Each expression contains Integers, variables, parentheses, white spaces and operations which are defined as follow: </br>
 + **:A:** (Addition)  
 + **:S:** (Subtraction)  
 + **:M:** (Multiplication)  
 + **:D:** (Division)  
 
-The order of operations are as usuall, but calculated from right to left.
+The order of operations are as usuall, but calculate from right to left.
 
 ### Sample Input:
 ```
