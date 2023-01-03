@@ -1,5 +1,8 @@
 %{
+    #include <stdio.h>
+    #include <string.h>
 
+    #include "parser.tab.h"
 %}
 
 
@@ -12,15 +15,17 @@ number      {digit}+(\.{digit}+)?([eE][+\-]?{digit}+)?
 
 %%
 
-{ws}        {  }
-{id}        {yylval = install_id(); return ID;}
-{number}  	{yylval = install_num(); return NUM;}
+{ws}        { ; }
+{id}        {strcpy(yylval.id , yytext); return ID;}
+{number}  	{strcpy(yylval.num , yytext); return NUM;}
 
-:A:         {return ADD;}
-:S:         {return SUB;}
-:M:         {return MUL;}
-:D:         {return DIV;}
+":A:"       {return ADD;}
+":S:"       {return SUB;}
+":M:"       {return MUL;}
+":D:"       {return DIV;}
 
 [=()]       {return yytext[0];}
+
+.           printf("Unexpected Character!\n");
 
 %%
