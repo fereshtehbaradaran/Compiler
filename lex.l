@@ -17,7 +17,7 @@ number      {digit}+(\.{digit}+)?([eE][+\-]?{digit}+)?
 
 {ws}        { ; }
 {id}        {strcpy(yylval.id , yytext); return ID;}
-{number}  	{strcpy(yylval.num , yytext); return NUM;}
+{number}    {strcpy(yylval.num , yytext); return NUM;}
 
 ":A:"       {return ADD;}
 ":S:"       {return SUB;}
