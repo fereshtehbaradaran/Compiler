@@ -25,7 +25,7 @@ x = t2;
 
 
 ## Requierments
-You need to have Flex and Bison installed 
+You need to have ```Flex``` and ```Bison``` installed 
 
 ### Ubuntu
 ```
