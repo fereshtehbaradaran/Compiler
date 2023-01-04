@@ -8,7 +8,7 @@ Each expression contains Integers, variables, parentheses, white spaces and oper
 + **:M:** (Multiplication)  
 + **:D:** (Division)  
 
-The order of operations are as usuall, but calculate from right to left.
+The order of operations are as usuall, but their associativity is opposite.
 
 ### Sample Input:
 ```
