@@ -2,7 +2,7 @@
     #include <stdio.h>
     #include <string.h>
 
-	int tempCounter = 1;
+    int tempCounter = 1;
 
     char Buffer[16];
     char sign[50];
