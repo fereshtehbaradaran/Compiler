@@ -30,9 +30,9 @@ You need to have ```Flex``` and ```Bison``` installed
 
 ### Ubuntu
 ```
-$ sudo apt-get update
-$ sudo apt-get install flex
-$ sudo apt-get install bison 
+$ sudo apt update
+$ sudo apt install flex
+$ sudo apt install bison 
 ```
 
 ## Run
