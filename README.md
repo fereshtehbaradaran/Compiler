@@ -35,6 +35,12 @@ $ sudo apt install flex
 $ sudo apt install bison 
 ```
 
+### Mac
+```
+$ brew install flex
+$ brew install bison 
+```
+
 ## Run
 ```
 $ bison -d  parser.y
